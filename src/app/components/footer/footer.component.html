@@ -1,0 +1,94 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <!-- Main Footer Section -->
+      <div class="footer-main">
+        <!-- Company Info -->
+        <div class="footer-section company-info">
+          <div class="footer-logo">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WanderEasy Weather</span>
+          </div>
+          <p class="company-description">
+            Your trusted companion for accurate weather forecasts worldwide. 
+            Get real-time weather data to plan your day and travels with confidence.
+          </p>
+          <div class="social-links">
+            <a 
+              *ngFor="let social of socialLinks" 
+              [href]="social.link" 
+              class="social-link"
+              target="_blank"
+              [title]="social.name"
+            >
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div class="footer-section">
+          <h3 class="footer-title">Product</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of footerLinks.product">
+              <a [href]="link.link">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div class="footer-section">
+          <h3 class="footer-title">Company</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of footerLinks.company">
+              <a [href]="link.link">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support Links -->
+        <div class="footer-section">
+          <h3 class="footer-title">Support</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of footerLinks.support">
+              <a [href]="link.link">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section newsletter">
+          <h3 class="footer-title">Stay Updated</h3>
+          <p class="newsletter-description">
+            Subscribe to our newsletter for weather tips and updates.
+          </p>
+          <div class="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Enter your email"
+              [(ngModel)]="newsletterEmail"
+              (keyup.enter)="subscribeNewsletter()"
+            >
+            <button (click)="subscribeNewsletter()" class="subscribe-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <div class="copyright">
+            <p>&copy; {{ currentYear }} WanderEasy Weather. All rights reserved.</p>
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 

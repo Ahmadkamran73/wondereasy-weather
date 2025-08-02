@@ -1,0 +1,23 @@
+<div class="city-selector-container">
+  <div class="section-header">
+    <h2 class="section-title">Popular Cities</h2>
+    <p class="section-subtitle">Select a city to view its weather forecast</p>
+  </div>
+  
+  <div class="cities-grid">
+    <div 
+      class="city-card" 
+      *ngFor="let city of cities"
+      (click)="selectCity(city)"
+    >
+      <div class="city-icon">
+        <i class="fas fa-city"></i>
+      </div>
+      <div class="city-name">{{ city }}</div>
+      <div class="city-hover">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</div>
+  

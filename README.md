@@ -1,6 +1,13 @@
-# WandereasyWeather
+# WanderEasy Weather
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+A modern weather application built with Angular that provides accurate weather forecasts for travelers and outdoor enthusiasts.
+
+## Features
+
+- Clean, modern UI with responsive design
+- Real-time weather data
+- Travel-friendly weather information
+- Mobile-optimized interface
 
 ## Development server
 

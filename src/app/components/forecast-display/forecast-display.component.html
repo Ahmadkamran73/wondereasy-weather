@@ -1,0 +1,43 @@
+<div class="forecast-container" *ngIf="city">
+  <div class="forecast-header">
+    <h2 class="forecast-title">Weather Forecast for {{ city }}</h2>
+    <p class="forecast-subtitle">5-day weather prediction</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span>{{ error }}</span>
+  </div>
+
+  <div class="forecast-grid" *ngIf="forecastData.length">
+    <div class="forecast-card" *ngFor="let forecast of forecastData">
+      <div class="forecast-date">
+        <div class="day">{{ forecast.dt_txt | date:'EEE' }}</div>
+        <div class="date">{{ forecast.dt_txt | date:'MMM d' }}</div>
+      </div>
+      
+      <div class="forecast-icon">
+        <img [src]="'http://openweathermap.org/img/w/' + forecast.weather[0].icon + '.png'" 
+             [alt]="forecast.weather[0].description" />
+      </div>
+      
+      <div class="forecast-temp">
+        <span class="temp-main">{{ forecast.main.temp | number:'1.0-0' }}°C</span>
+        <div class="temp-range">
+          <span class="temp-min">{{ forecast.main.temp_min | number:'1.0-0' }}°</span>
+          <span class="temp-max">{{ forecast.main.temp_max | number:'1.0-0' }}°</span>
+        </div>
+      </div>
+      
+      <div class="forecast-description">
+        {{ forecast.weather[0].description | titlecase }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading-spinner" *ngIf="!forecastData.length && !error">
+    <i class="fas fa-spinner fa-spin"></i>
+    <span>Loading weather data...</span>
+  </div>
+</div>
+  

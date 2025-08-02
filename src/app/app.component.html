@@ -1,0 +1,43 @@
+<div class="app-container">
+  <app-navbar (navigationEvent)="onNavigation($event)"></app-navbar>
+  
+  <main class="main-content">
+    <!-- Home View -->
+    <div *ngIf="currentView === 'home'" class="home-view">
+      <app-home></app-home>
+      
+      <div class="search-section">
+        <div class="search-header">
+          <h2>Quick Weather Search</h2>
+          <p>Find weather information for any city</p>
+        </div>
+        <app-city-search (citySelected)="onCitySelected($event)"></app-city-search>
+      </div>
+      
+      <app-city-selector (citySelected)="onCitySelected($event)"></app-city-selector>
+    </div>
+    
+    <!-- Forecast View -->
+    <div *ngIf="currentView === 'forecast'" class="forecast-view">
+      <div class="forecast-header">
+        <button class="back-btn" (click)="goToHome()">
+          <i class="fas fa-arrow-left"></i>
+          Back to Home
+        </button>
+      </div>
+      <app-forecast-display [city]="selectedCity"></app-forecast-display>
+    </div>
+
+    <!-- About View -->
+    <div *ngIf="currentView === 'about'" class="about-view">
+      <app-about></app-about>
+    </div>
+
+    <!-- Contact View -->
+    <div *ngIf="currentView === 'contact'" class="contact-view">
+      <app-contact></app-contact>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

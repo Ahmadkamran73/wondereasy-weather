@@ -1,0 +1,46 @@
+<div class="home-container">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Discover Weather Anywhere
+        <span class="highlight">in the World</span>
+      </h1>
+      <p class="hero-description">
+        Get accurate weather forecasts for your travels and daily planning. 
+        WanderEasy Weather provides real-time data for cities worldwide.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-outline">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="weather-animation">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-cloud"></i>
+        <i class="fas fa-cloud-rain"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2 class="section-title">Why Choose WanderEasy Weather?</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <i [class]="feature.icon"></i>
+        </div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Explore?</h2>
+      <p>Start checking weather conditions for your next destination</p>
+      <button class="btn btn-primary">Explore Cities</button>
+    </div>
+  </div>
+</div> 

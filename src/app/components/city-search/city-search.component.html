@@ -1,0 +1,33 @@
+<div class="search-container">
+  <div class="search-box">
+    <div class="search-input-wrapper">
+      <i class="fas fa-search search-icon"></i>
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm"
+        (input)="onSearchInput()"
+        placeholder="Search for a city..."
+        class="search-input"
+        [class.active]="isSearchOpen"
+      >
+      <button 
+        class="search-toggle" 
+        (click)="toggleSearch()"
+        *ngIf="!isSearchOpen"
+      >
+        <i class="fas fa-map-marker-alt"></i>
+      </button>
+    </div>
+    
+    <div class="search-dropdown" [class.show]="isSearchOpen && filteredCities.length > 0">
+      <div 
+        class="search-item" 
+        *ngFor="let city of filteredCities"
+        (click)="selectCity(city)"
+      >
+        <i class="fas fa-city"></i>
+        <span>{{ city }}</span>
+      </div>
+    </div>
+  </div>
+</div> 
